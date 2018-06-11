@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="assets/css/page.css">
+
+
+    <link rel="import" href="sections/login.html">
+    <link rel="import" href="sections/nav-bar.html">
+    <link rel="import" href="sections/side-bar.html">
+    <title>Hello World!</title>
+
+
+  </head>
+  <body>
+    <h1>Welcome to Project Elmina</h1>
+    <!-- All of the Node.js APIs are available in this renderer process. -->
+    We are using Node.js <script>document.write(process.versions.node)</script>,
+    Chromium <script>document.write(process.versions.chrome)</script>,
+    Electron <script>document.write(process.versions.electron)</script>,
+    <main class="content"></main>
+  
+    <script type="text/javascript">
+      // You can also require other files to run in this process
+      require('./assets/imports')
+      require('./assets/nav')
+    </script>
+  </body>
+</html>
