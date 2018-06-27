@@ -1,3 +1,11 @@
-const {app, ipcMain} = require('electron')
+var {ipcMain} = require('electron')
+const sequelize = require('sequelize')
 
-console.log('login page')
+
+//var userExistence = undefined
+console.log('main-process login.js')
+
+
+
+
+

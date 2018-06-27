@@ -1,3 +1,3 @@
 const {app, ipcMain} = require('electron')
 
-console.log('nav-bar')
+console.log('main process nav-bar')

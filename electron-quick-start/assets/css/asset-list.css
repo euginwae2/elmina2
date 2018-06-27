@@ -1,0 +1,17 @@
+.listItem {
+    height: 15 px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.listItem:hover {
+    background-color: forestgreen;
+}
+.listItem.is-selected {
+    background-color: forestgreen;
+}
+
+.listItem.de-searched {
+    display: none;
+    visibility: hidden;
+}

@@ -1,0 +1,36 @@
+#header-bar {
+    width: 100%;
+}
+
+.header-button {
+    display: inline-block;
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+}
+
+#logo-icon {
+    left: 0;
+    position: absolute;
+    background-color: red;
+}
+
+#logout {
+    right: 0;
+    position: absolute;
+    background-color: green;
+}
+
+#user-settings {
+    right: 100px;
+    position: absolute;
+    background-color: purple;
+}
+
+#online-status {
+    right: 200px;
+    position: absolute;
+    background-color: gold
+}

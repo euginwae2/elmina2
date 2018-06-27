@@ -1,0 +1,61 @@
+<template class="task-template">
+        <div id="home-view" class="page">
+                <div id="header-bar">
+                        <div id="logo-icon" class="header-button">logo</div>
+                        <div id="online-status" class="header-button">online/offline</div>
+                        <div id="user-settings" class="header-button">settings</div>
+                        <div id="logout" class="header-button">logout</div>
+                        <script type="text/javascript">
+                            require('./render-process/header')
+                        </script>    
+                </div>
+                <div id="nav-bar">
+                    <div id="dashboard-nav" class="nav-button">Dashboard |</div>
+                    <div id="asset-nav" class="nav-button">Asset |</div>
+                    <div id="report-nav" class="nav-button">Reports</div>
+                        <script type="text/javascript">
+                            require('./render-process/nav-bar')
+                        </script>
+                </div> 
+                <div id="dashboard-view" class="nav-view is-shown">dashboard view
+                    <script type="text/javascript">require('./render-process/dashboard-view')</script>
+                </div>  
+                <div id="asset-view" class="nav-view">
+                        <div class="side-bar">
+                            <div id="searchDiv">
+                                <form id="searchForm">
+                                    <input id="searchBar" type="text" placeholder="search">
+                                </form>
+                                <script type="text/javascript">
+                                    require('./render-process/search-bar')
+                                </script>
+                            </div>
+                                <div id="assetList"></div>
+                                <script type="text/javascript">
+                                    require('./render-process/side-bar')
+                                </script>
+                        </div>
+                        <div id="asset-detail">
+                            <div id="attributeView">Attribute View</div>
+                            <div id="EventView">Event View</div>
+                            Asset details asset
+                            <script type="text/javascript">
+                                require('./render-process/asset-detail')
+                            </script>
+                        </div>
+                        
+                        <script type="text/javascript">require('./render-process/asset-view')</script>
+                </div>  
+                <div id="report-view"class="nav-view">report view
+                        <script type="text/javascript">require('./render-process/report-view')</script>
+                </div>
+        </div>
+        <script type="text/javascript">
+            require('./render-process/home')
+        </script>
+
+    
+        
+    
+
+</template>

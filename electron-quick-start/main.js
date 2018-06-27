@@ -6,6 +6,8 @@ const react = require('react')
 const glob = require('glob')
 const path =  require('path')
 
+//check network-status
+require('./script/network-status.js')
 
 // Modules to control application life and create native browser window
 const {app, BrowserWindow} = require('electron')
@@ -16,6 +18,7 @@ let mainWindow
 
 //load main-process files
 loadMain()
+dbConnection()
 
 function createWindow () {
   // Create the browser window.
@@ -66,4 +69,8 @@ app.on('activate', function () {
 function loadMain () {
   const files = glob.sync(path.join(__dirname, 'main-process/**/*.js'))
   files.forEach((file) =>{require(file) })
+}
+
+function dbConnection () {
+  require('./script/postgres-connection.js')
 }

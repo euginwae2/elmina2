@@ -3,22 +3,37 @@
   <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="assets/css/page.css">
-
+    <link rel="stylesheet" href="assets/css/nav-bar.css">
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/home.css">
+    <link rel="stylesheet" href="assets/css/login.css">
+    <link rel="stylesheet" href="assets/css/nav-view.css">
+    <link rel="stylesheet" href="assets/css/side-bar.css">
+    <link rel="stylesheet" href="assets/css/asset-detail.css">
+    <link rel="stylesheet" href="assets/css/search-bar.css">
+    <link rel="stylesheet" href="assets/css/asset-list.css">
+    
 
     <link rel="import" href="sections/login.html">
     <link rel="import" href="sections/nav-bar.html">
-    <link rel="import" href="sections/side-bar.html">
+    <link rel="import" href="sections/signup.html">
+    <link rel="import" href="sections/home.html">
+    
     <title>Hello World!</title>
-
 
   </head>
   <body>
-    <h1>Welcome to Project Elmina</h1>
-    <!-- All of the Node.js APIs are available in this renderer process. -->
-    We are using Node.js <script>document.write(process.versions.node)</script>,
-    Chromium <script>document.write(process.versions.chrome)</script>,
-    Electron <script>document.write(process.versions.electron)</script>,
-    <main class="content"></main>
+
+    <main class="content" id="mainContent">
+      <div class="page is-shown" id="welcomeView">
+        <h1>Welcome to Project Elmina</h1>
+        <!-- All of the Node.js APIs are available in this renderer process. -->
+        We are using Node.js <script>document.write(process.versions.node)</script>,
+        Chromium <script>document.write(process.versions.chrome)</script>,
+        Electron <script>document.write(process.versions.electron)</script>,
+      </div>
+
+    </main>
   
     <script type="text/javascript">
       // You can also require other files to run in this process

@@ -1,0 +1,16 @@
+<template class="task-template">
+    <div id="signup-view" class="signup page">
+        <form id="signup-form">
+            <input type="text" id="signup-username" placeholder="Enter Username"><div id="signupUserNameNotfication"></div>
+            <input type="password" id="signup-password" placeholder="Password">
+            <input type="password" id="signup-password2" placeholder="Reenter Password"><div id="signupPasswordNotification"></div>
+            <input type="text" id="signup-firstName" placeholder="First Name">
+            <input type="text" id="signup-lastName" placeholder="Last Name">
+            <div id = 'signupNotification'></div>
+            <input type="submit" id="signup-submit">
+        </form>
+        <script type="text/javascript">
+              require('./render-process/signup')
+        </script>
+    </div>
+</template>

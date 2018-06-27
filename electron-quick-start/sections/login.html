@@ -1,13 +1,16 @@
 <template class="task-template">
-    <div id="login-view" class="login page.is-shown">
+    <div id="login-view" class="login page">
       <form id="login-form">
-        <input type="text" id="login-username" placeholder="username">
-        <input type="password" id="login-password" placeholder="password">
+        <input type="text" id="login-username" placeholder="Username"><div id="userNameNotification"></div>
+        <input type="password" id="login-password" placeholder="Password"><div id="passwordNotification"></div>
         <input type="submit" id="login-submit">
       </form>
+      <a href="" id="signupLink">+Add User</a>
+      <div id="login-notification"></div>
+      <script type="text/javascript">
+        console.log('render-process script here')
+        require('./render-process/login')
+      </script>
     </div>
 </template>
 
-<script type="text/javascript">
-  require('./render-process/login')
-</script>

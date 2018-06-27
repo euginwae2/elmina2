@@ -1,0 +1,1 @@
+console.log("implement a method to check network status and internet connectivity")
