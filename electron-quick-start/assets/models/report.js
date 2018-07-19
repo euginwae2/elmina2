@@ -5,6 +5,9 @@ module.exports = (sequelize,DataTypes) => {
         
         queryString: {
             type: DataTypes.TEXT
+        },
+        reportName: {
+            type: DataTypes.STRING
         }
     })
 

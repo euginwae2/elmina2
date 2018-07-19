@@ -1,13 +1,20 @@
 #dashboard-view {
-    background-color: black;
-
+    /* background-color: black; */
+    height: 90%;
 }
 
 #asset-view {
-    background-color: blue;
+    /* background-color: blue; */
+    height: 90%;
     
 }
 
 #report-view {
-    background-color: chartreuse;
+   /*  background-color: chartreuse; */
+   height: 90%;
+}
+
+.kpi{
+    min-width: 200px;
+    min-height: 200px;
 }

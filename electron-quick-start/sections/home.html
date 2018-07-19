@@ -1,27 +1,29 @@
 <template class="task-template">
         <div id="home-view" class="page">
                 <div id="header-bar">
-                        <div id="logo-icon" class="header-button">logo</div>
-                        <div id="online-status" class="header-button">online/offline</div>
-                        <div id="user-settings" class="header-button">settings</div>
-                        <div id="logout" class="header-button">logout</div>
+                        <div id="logo-icon" class="header-button col-4">Elmina(alpha)</div>
+                        <div class="col-5" style="height: 100%"></div>
+                        <div id="online-status" class="header-button col-4">online/offline</div>
+                        <div id="user-settings" class="header-button col-4">settings</div>
+                        <div id="logout" class="header-button col-4">logout</div>
                         <script type="text/javascript">
                             require('./render-process/header')
                         </script>    
                 </div>
                 <div id="nav-bar">
-                    <div id="dashboard-nav" class="nav-button">Dashboard |</div>
-                    <div id="asset-nav" class="nav-button">Asset |</div>
-                    <div id="report-nav" class="nav-button">Reports</div>
+                    <div id="dashboard-nav" class="nav-button col-1 is-selected">Dashboard</div>
+                    <div id="asset-nav" class="nav-button col-1">Asset</div>
+                    <div id="report-nav" class="nav-button col-1">Reports</div>
                         <script type="text/javascript">
                             require('./render-process/nav-bar')
                         </script>
                 </div> 
-                <div id="dashboard-view" class="nav-view is-shown">dashboard view
+                <div id="dashboard-view" class="nav-view is-shown row-5">
+                    <div class="col-6"><h1>Dashboard view</h1></div>
                     <script type="text/javascript">require('./render-process/dashboard-view')</script>
                 </div>  
                 <div id="asset-view" class="nav-view">
-                        <div class="side-bar">
+                        <div class="side-bar col-2">
                             <div id="searchDiv">
                                 <form id="searchForm">
                                     <input id="searchBar" type="text" placeholder="search">
@@ -30,32 +32,45 @@
                                     require('./render-process/search-bar')
                                 </script>
                             </div>
-                                <div id="assetList"></div>
+                                <div id="assetList" class="row-5"></div>
                                 <script type="text/javascript">
                                     require('./render-process/side-bar')
                                 </script>
+                            <div id="newAssetButton">Add Asset</div>
                         </div>
-                        <div id="asset-detail">
-                            <div id="attributeView">Attribute View</div>
-                            <div id="EventView">Event View</div>
-                            Asset details asset
+                        <div id="assetDetail " class="col-3" style="height: 100%;">
+                            <div id="asset-view-notification" class="row-7 notifcation-is-hidden">Notification : </div>
+                            <div id="asset-detail-toggle" class="row-3">
+                                <div id="attribute-toggle" class="asset-toggle is-selected col-8">Attributes</div>
+                                <div id="event-toggle" class="asset-toggle col-8">Events</div>
+                            </div>
+                            <div id="attributeView" class="detail-views is-shown row-5 col-6">
+                                <div id="col-6">Attribute View
+                                    <form id="attributeForm"></form>
+                                </div>
+                                <script type="text/javascript">
+                                    require('./render-process/attribute-view')    
+                                </script>
+                            </div>
+                            <div id="eventView" class="detail-views row-5 col-6">
+                                    <div id="col-6">Event View</div>
+                                    <script type="text/javascript">
+                                        require('./render-process/event-view.js')    
+                                    </script>
+                            </div>
                             <script type="text/javascript">
                                 require('./render-process/asset-detail')
                             </script>
                         </div>
-                        
                         <script type="text/javascript">require('./render-process/asset-view')</script>
                 </div>  
-                <div id="report-view"class="nav-view">report view
+                <div id="report-view"class="nav-view row-5">
+                    <div class="col-6"><span> <h1>Report View</h1> </span></div>
+                    <div class="col-6" id="reportList"></div>
                         <script type="text/javascript">require('./render-process/report-view')</script>
                 </div>
         </div>
         <script type="text/javascript">
             require('./render-process/home')
         </script>
-
-    
-        
-    
-
 </template>

@@ -1,0 +1,20 @@
+#backButton {
+    cursor: pointer;
+}
+
+#fieldsSettingsButton{
+    cursor: pointer;
+    float: right;
+    text-align: center;
+}
+.settingsTabs {
+    cursor: pointer;
+}
+
+.fieldSettingsInput{
+    width: 100%;
+}
+
+.displayName {
+    width: 100%;
+}

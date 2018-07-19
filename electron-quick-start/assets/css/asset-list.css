@@ -1,14 +1,18 @@
 .listItem {
-    height: 15 px;
     width: 100%;
+    height: 10%;
+    padding: 5px;
+    float: left;
+    border: 1px solid gray;
     cursor: pointer;
 }
 
 .listItem:hover {
-    background-color: forestgreen;
+    background-color: #7EAFA1;
 }
 .listItem.is-selected {
-    background-color: forestgreen;
+    background-color: #7EAFA1;
+    color: white;
 }
 
 .listItem.de-searched {

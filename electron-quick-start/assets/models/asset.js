@@ -3,10 +3,15 @@
 module.exports = (sequelize,DataType) => {
     var Asset = sequelize.define('Asset',{
         
+        status: {
+            type: DataType.STRING
+        },
+        
         description: {
             type: DataType.STRING,
             allowNull: false
         },
+        
         serialNumber: {
             type: DataType.STRING
         },
@@ -24,7 +29,7 @@ module.exports = (sequelize,DataType) => {
         },
         lastCal: {
             type: DataType.STRING
-        },
+        }
 
     })
 
@@ -32,7 +37,7 @@ module.exports = (sequelize,DataType) => {
         models.Asset.hasOne(models.CycleType)
         models.Asset.hasOne(models.PmType)
         models.Asset.hasMany(models.Attachment)
-        models.Asset.hasMany(models.AdditionalAttribute)
+        //models.Asset.hasMany(models.AdditionalAttribute)
     }
 
     return Asset

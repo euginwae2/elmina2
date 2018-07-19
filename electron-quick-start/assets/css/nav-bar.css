@@ -1,17 +1,20 @@
 #nav-bar {
     width: 100%;
-    top: 40px;
-    position: relative;
+    height: 5%;
+    background-color: #333435;
+    color: #fff;
 }
 
 .nav-button {
-    display: inline-block;
-    width: 33%;
+    display: block;
     text-align: center;
-    margin: auto;
     cursor: pointer;
-    min-height: 40px;
-    line-height: 40px;
+    height: 100%;
+}
+
+.nav-button.is-selected {
+    color: #7EAFA1;
+    border-bottom: 2px solid #7EAFA1;
 }
 
 .nav-view {
@@ -22,7 +25,6 @@
     transform: translateX(-20px);
     transition: visibility 0s .12s linear , opacity .12s ease-in, transform .12s ease-in;
     display: none;
-    min-height: 80%;
 }
 
 .nav-view.is-shown {
@@ -31,25 +33,18 @@
     opacity: 1;
     transform: translateX(0);
     transition: visibility 0s 0s linear , opacity .36s ease-out, transform .36s ease-out;
-    display: inline-block;
+    display: block;
 
-    position: absolute;
-    top: 80px;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    overflow-x: hidden;
-    overflow-y: auto;
 }
 
 #dashboard-nav {
-    background-color: indigo;
+    
 }
 
 #asset-nav {
-    background-color: crimson;
+    
 }
 
 #report-nav {
-    background-color: darkseagreen;
+    
 }

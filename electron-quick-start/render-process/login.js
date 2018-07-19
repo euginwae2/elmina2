@@ -1,6 +1,9 @@
+'use strict'
+
 const nav = require('../assets/nav')
 const {ipcRenderer} = require('electron')
 var models = require('../assets/models')
+var crypto = require('crypto');
 const mainConentent = document.getElementById("mainContent")
 const pages = document.getElementsByClassName('page')
 
@@ -12,7 +15,7 @@ setTimeout(() => {
     const welcomeView = document.getElementById("welcomeView")
     nav.hidePage(welcomeView)
     const loginView = document.getElementById("login-view")
-    console.log(loginView)
+    //console.log(loginView)
     nav.showPage(loginView)
 }, 3000);
 
@@ -37,14 +40,30 @@ function doesUserExist(models, loginUsername, loginPassword,nav) {
     models.User.findOne({where: {userName: loginUsername}})
     .then(results => {
         if(results == null){
-            console.log('User Does not exist')
             notification('User Does not exist')
             return false
         }
         else {
             console.log('Does user exist: ', results.userName == loginUsername)
-            goToHome();
-            return true
+            console.log('userName :'+results.userName);
+            console.log('salt: '+results.salt);
+
+            var userData = sha512(loginPassword, results.salt)
+            console.log(userData);
+            if (userData.passwordHash == results.hash)
+            {
+                console.log('password authenticated')
+                goToHome();
+                return true
+            }
+            else 
+            {
+                console.log('passwords do not match');
+                notification('Incorrrect credentials');
+                //TODO: Implement login try counter and lock mechanism
+            }
+            
+            
         }
     })
     .catch(error => {
@@ -52,8 +71,7 @@ function doesUserExist(models, loginUsername, loginPassword,nav) {
     })
 }
 
-function calcHash(salt,loginPassword) {}
-function authenticate(calcedHash,storedHash) {}
+
 function goToHome() {
     const nav = require('../assets/nav')
     const pages = document.getElementsByClassName('page')
@@ -129,3 +147,19 @@ function notifyPassword(message) {
     var passwordDiv = document.getElementById('passwordNotification')
     passwordDiv.innerHTML = message
 }
+
+/**
+ * hash password with sha512
+ * @function
+ * @param {string} password
+ * @param {string} salt
+ */
+var sha512 = function (password, salt) {
+    var hash  = crypto.createHmac('sha512', salt);
+    hash.update(password);
+    var value = hash.digest('hex');
+    return {
+        salt: salt,
+        passwordHash:value
+    };
+};

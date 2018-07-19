@@ -1,17 +1,18 @@
 'use strict'
 
 module.exports = (sequelize,DataType) => {
-    const additionalAttribute = sequelize.define('AdditionalAttribute', {
+    const AdditionalAttribute = sequelize.define('AdditionalAttribute', {
      
         name: {
             type: DataType.STRING,
             allowNull: false
         },
-        value: {
+        type: {
             type: DataType.STRING,
-            defaultValue: null
+            allowNull: false
         }
+        
     })
     
-    return additionalAttribute
+    return AdditionalAttribute
 }

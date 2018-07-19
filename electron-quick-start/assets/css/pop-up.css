@@ -1,0 +1,36 @@
+#pop-up-container{
+    background-color:rgba(0,0,0,.5);
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+    visibility: hidden;
+}
+
+#pop-up-container.is-shown {
+    pointer-events: auto;
+    visibility: visible;
+    transform: translateX(0);
+    transition: visibility 0s 0s linear , opacity .36s ease-out, transform .36s ease-out;
+    display: block;
+}
+
+#popup-view {
+    background-color: rgba(60, 72, 83, 1);
+    color: #fff;
+    opacity: 1;
+}
+
+#popup-cancel {
+    cursor: pointer;
+    background-color: rgba(51, 52, 53, 1);
+    color: rgba(255, 255, 255, 1);
+    text-align: center;
+}
+
+#popup-save {
+    cursor: pointer;
+    background-color: rgba(107, 178, 199, 1);
+    text-align: center;
+}

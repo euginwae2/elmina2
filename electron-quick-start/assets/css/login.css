@@ -1,0 +1,41 @@
+#login-view {
+    background-image: url(../images/ONKUY90.jpg);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+} 
+
+ #signup-view {
+    background-image: url(../images/ONKUY90.jpg);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+} 
+
+
+#form-container {
+    margin: auto;
+    width: 100%;
+    vertical-align: -webkit-baseline-middle;
+    background-color: chartreuse;
+}
+
+
+#form-container2 {
+    margin: auto;
+    width: 100%;
+    vertical-align: -webkit-baseline-middle;
+    background-color: skyblue;
+}
+
+.atLeast100heigh {
+    min-height: 100px;
+}
+.loginInputText {
+    width: 100%;
+    line-height: 30px;
+    font-size: 20px;
+}

@@ -1,8 +1,78 @@
-#asset-detail {
+#assetDetail {
     background-color: red;
-    right: 0;
-    left: 340px;
-    position: absolute;
-    top: 0;
-    bottom: 0;
+    width: 100%;
+    height: 100%;
 }
+
+#asset-detail-toggle {
+    cursor: pointer;
+    background-color: #333435;
+    color: #fff;
+}
+.asset-toggle {
+    display: block;
+    text-align: center;
+    text-align: center;
+}
+
+.asset-toggle.is-selected {
+    color: #7EAFA1;
+    border-bottom: 2px solid #7EAFA1;
+}
+
+.detail-views {
+    display: none;
+    visibility: hidden;
+}
+
+.detail-views.is-shown {
+    display: block;
+    visibility: visible;
+    width: 100%;
+    overflow-y: auto;
+    height: 90%;
+    border: 1px solid #979CA2;
+    background-color: #3C4853;
+    color: #fff;
+}
+
+#attributeView {
+   
+}
+
+#eventView {
+    
+}
+
+#asset-view-notification {
+    background-color: black;
+    color: white;
+}
+
+.notifcation-is-hidden {
+    visibility: hidden;
+    display: none;
+}
+
+.notifcation-is-shown {
+    visibility: visible;
+    display: block;
+}
+
+.add-asset-controls {
+    cursor: pointer;
+    float: right;
+    text-align: center;
+}
+
+#add-asset-cancelBtn{background-color: #333435;}
+#add-asset-saveBtn{background-color: #6BB2C7;}
+.dataField {
+    width: 100%;
+}
+
+#eventTitleBar{
+    background-color: #333435;
+    text-align: center;
+}
+.eventItem{border-bottom: 1px solid #fff;}

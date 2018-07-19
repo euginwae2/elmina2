@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "A minimal Electron application",
   "main": "main.js",
-  
   "scripts": {
     "start": "electron .",
     "test": "mocha"
@@ -22,6 +21,7 @@
     "electron": "^2.0.0"
   },
   "dependencies": {
+    "chart.js": "^2.7.2",
     "pg": "^7.4.3",
     "pg-hstore": "^2.3.2",
     "sequelize": "^4.37.10"

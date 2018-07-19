@@ -1,0 +1,19 @@
+.runReportButton {
+    cursor: pointer;
+    background-color: #7EAFA1;
+    text-align: center;
+    border-bottom: 1px solid #fff;
+}
+.title {
+    float: left;
+}
+
+.titleBar{
+    background-color: #333435;
+    color: #fff;
+}
+.reportItem{
+    color: #fff;
+    background-color: #3C4853;
+    border-bottom: 1px solid #fff;
+}

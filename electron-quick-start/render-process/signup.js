@@ -1,5 +1,9 @@
 const {ipcRenderer} = require('electron');
 console.log('render-process/signup.js');
+var models = require('../assets/models');
+var nav = require('../assets/nav');
+var crypto = require('crypto');
+
 
 
 //Get HTML elements
@@ -11,14 +15,18 @@ const firstName = document.getElementById('signup-firstName');
 const lastName = document.getElementById('signup-lastName');
 
 
+
 //Define what happens when submit is clicked
 signup.addEventListener('click', (event) => {
     event.preventDefault()
     const notification = document.getElementById('signupNotification')
-    if (finalCheck(firstName,lastName) == false) {
+    const user = getFormData();
+    if (nameCheck(firstName,lastName) == false) {
         notification.innerHTML = 'first and last name cannot be empty';
     } else {
-        ipcRenderer.send('signup-user', getFormData())
+        //ipcRenderer.send('signup-user', getFormData())
+        createUser(getFormData(),models);
+              
     }
 });
 
@@ -49,12 +57,12 @@ lastName.addEventListener('keyup', (event) => {
 
 function getFormData() {
 
-    return JSON.stringify({
+    return {
         'userName': userName.value,
         'password': password.value,
         'firstName': firstName.value,
         'lastName': lastName.value
-    })
+    }
 }
 
 function userNameIsAcceptable(username) {
@@ -110,8 +118,55 @@ function notifyPassword(msg) {
     passwordNotif.innerHTML = msg;
 }
 
-function finalCheck (firstName,lastName) {
+function nameCheck (firstName,lastName) {
     var logic = firstName.value !='' && lastName.value !=''
     return logic
 }
+
+function createUser(args,models) {
+   const userSalt = genRandomString(20); //salt length has been set to 20
+   const userHash = sha512(args.password,userSalt);
+   //console.log(userSalt);
+    models.User
+    .create({userName: args.userName, salt: userHash.salt, hash: userHash.passwordHash, firstName: args.firstName, lastName: args.lastName})
+    .then((created) => {
+        console.log('created status : ',created);
+        const pages = document.getElementsByClassName('page');
+        const loginView = document.getElementById("login-view");
+        nav.hideAllPages(pages);
+        nav.showPage(loginView); 
+    })
+    .catch(error => {
+        console.log(error)
+        const userCreationNotif = document.getElementById('signupNotification');
+        userCreationNotif.innerHTML = 'Unable to create user'
+    }); 
+}
+
+/**
+ * hash password with sha512
+ * @function
+ * @param {string} password
+ * @param {string} salt
+ */
+var sha512 = function (password, salt) {
+    var hash  = crypto.createHmac('sha512', salt);
+    hash.update(password);
+    var value = hash.digest('hex');
+    return {
+        salt: salt,
+        passwordHash:value
+    };
+};
+
+/**
+ * generates random string of characters i.e salt
+ * @function
+ * @param {number} length - Length of the random string.
+ */
+var genRandomString = function(length) {
+    return crypto.randomBytes(Math.ceil(length/2))
+        .toString('hex')
+        .slice(0,length);
+};
 

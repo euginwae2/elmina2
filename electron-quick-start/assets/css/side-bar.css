@@ -1,9 +1,26 @@
 .side-bar {
-    height: 100%;
-    width: 340px;
-    overflow-x: hidden;
-    overflow-y: auto;
+    height: 100%; 
     background-color: #ffffff;
-    left: 0;
-    position: absolute;
+    padding: 0;
+    border-right: 1px solid #979CA1;
+    min-width: 200px;
+}
+
+#newAssetButton {
+    text-align: center;
+    background-color: black;
+    cursor: pointer; 
+    color: #ffffff;
+    padding: 5px;
+    height: 5%;
+}
+
+#assetList {
+    overflow-y: auto;
+    padding: 0;
+    height: 90%;
+}
+#searchDiv {
+    padding: 5px;
+    height: 5%;
 }

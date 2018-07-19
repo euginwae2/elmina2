@@ -1,0 +1,1 @@
+console.log('Pop-up renderer')

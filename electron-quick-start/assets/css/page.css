@@ -1,12 +1,17 @@
 /* page */
+html, body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
 .page {
-    position: absolute;
+   position: absolute; 
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     overflow-x: hidden;
-    overflow-y: auto;
+  /*   overflow-y: auto; */
    
   
     /* Hide */
@@ -17,18 +22,96 @@
     transform: translateX(-20px);
     transition: visibility 0s .12s linear , opacity .12s ease-in, transform .12s ease-in;
   }
+  .is-hidden {
+    pointer-events: none;
+    visibility: hidden;
+    display:none;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: visibility 0s .12s linear , opacity .12s ease-in, transform .12s ease-in;
+  }
   .page.is-shown {
     pointer-events: auto;
     visibility: visible;
-    display: inline;
+    display: block;
     opacity: 1;
     transform: translateX(0);
     transition: visibility 0s 0s linear , opacity .36s ease-out, transform .36s ease-out;
   }
 
-  #mainContent {
+#mainContent {
     min-width: 800px;
     min-height: 600px;
-    overflow-x: hidden;
+   /*  overflow-x: hidden; */
     overflow-y: auto;
-  }
+  } 
+* {
+  box-sizing: border-box;
+}
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+  /* border: 1px solid red;  */
+}
+  .col-1 {width: 33.33%;}
+  .col-2 {width: 25%;}
+  .col-3 {width: 75%;}
+  .col-4 {width: 10%;}
+  .col-5 {width: 60%;}
+  .col-6 {width: 100%}
+  .col-7 {width: 40%;}
+  .col-8 {width: 50%;}
+  .col-9 {width: 80%;}
+  .col-10 {width: 20%;}
+  
+  
+[class*="row-"] ::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+ /*  .row ::after {
+    content: "";
+    clear: both;
+    display: table;
+  } */
+
+  .row-1 {height: 33.33%;}
+  .row-2 {height: 50%;}
+  .row-3 {height: 10%;}
+  .row-4 {height: 100%;}
+  .row-5 {height: 80%;}
+  .row-6 {height: 70%;}
+  .row-7 {height: 5%;}
+  .row-8 {height: 90%;}
+
+
+.flex-container {
+    justify-content: center;
+    align-items: center;
+}
+
+.fill-parent {
+  height: -webkit-fill-available;
+}
+
+/*Scroll-bar*/
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 

@@ -5,13 +5,18 @@ module.exports = (sequelize,DataTypes) => {
           
             userName: {
                 type: DataTypes.STRING(25),
+                unique: true
             },
             salt: {
-                type: DataTypes.DATE,
-                defaultValue: DataTypes.NOW
+                type: DataTypes.STRING,
+                
             },
             hash: {
                 type: DataTypes.STRING,
+                defaultValue: function ()
+                {
+                    return new Date();
+                }
             },
             firstName: {
                 type: DataTypes.CHAR

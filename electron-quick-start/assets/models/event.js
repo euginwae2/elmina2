@@ -8,12 +8,12 @@ module.exports = (sequelize,DataTypes) => {
             allowNull: false
         },
         oldValue: {
-            type: DataTypes.STRING,
-            allowNull: false
+            type: DataTypes.STRING
+            
         },
         newValue: {
-            type: DataTypes.STRING,
-            allowNull: false}
+            type: DataTypes.STRING
+            }
     })
 
     Event.associate = function(models) {

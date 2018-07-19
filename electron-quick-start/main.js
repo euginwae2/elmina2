@@ -10,7 +10,7 @@ const path =  require('path')
 require('./script/network-status.js')
 
 // Modules to control application life and create native browser window
-const {app, BrowserWindow} = require('electron')
+const {app, BrowserWindow,ipcMain} = require('electron')
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -37,6 +37,8 @@ function createWindow () {
     // when you should delete the corresponding element.
     mainWindow = null
   })
+
+
 }
 
 // This method will be called when Electron has finished
@@ -74,3 +76,6 @@ function loadMain () {
 function dbConnection () {
   require('./script/postgres-connection.js')
 }
+
+
+
